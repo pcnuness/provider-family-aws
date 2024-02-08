@@ -10,11 +10,6 @@
 
 Codigos utilizados [Repositorio](https://gitlab.com/pcnuness/iac/terraform/provider-family-aws/provider-aws-vpc)
 
-<h3 align="left"></h3>
-<p align="left">
-
-</p>
-
 <br />
 
 <h3 align="left">Problem</h3>

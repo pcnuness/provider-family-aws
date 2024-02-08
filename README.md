@@ -6,15 +6,45 @@
 
 <br />
 
-<h2 align="center">Using Terraform to Provisione Network in AWS (Amazon VPC)</h2>
+<h2 align="center">Setup Network in AWS using Terraform (Amazon VPC)</h2>
 
 Codigos utilizados [Repositorio](https://gitlab.com/pcnuness/iac/terraform/provider-family-aws/provider-aws-vpc)
 
 <br />
 
-<h3 align="left">Problem</h3>
+<h3 align="left">subnet-public-private</h3>
 <p align="left">
 
+```bash
+module "vpc" {
+  #source = "<path>/provider-family-aws/provider-aws-vpc/subnet-public-private"
+  #source = "git::https://gitlab.com/pcnuness/iac/terraform/provider-family-aws/provider-aws-vpc.git/modules/subnet-public-private?ref=v0.0.1"
+
+  region      = "us-east-1"
+  environment = "production"
+  vpc_cidr = {
+    range = "172.20.0.0/20"
+  }
+
+  num_azs = 2
+
+  create_database_subnet_group = true
+  type_database_subnet_group = {
+    private = true
+    public  = true
+  }
+
+  subnet_mask = {
+    private = 4
+    public  = 4
+  }
+
+  subnet_mask_init = {
+    public = 2
+  }
+
+}
+```
 </p>
 
 <br />

@@ -14,30 +14,30 @@
 
 ```bash
 module "vpc" {
-  #source = "<path>/provider-family-aws/provider-aws-vpc/subnet-public-private"
-  #source = "git::https://gitlab.com/pcnuness/iac/terraform/provider-family-aws/provider-aws-vpc.git/modules/subnet-public-private?ref=v0.0.1"
+  source = "../../modules/subnet-public-private"
 
+  client_name = "xpto"
   region      = "us-east-1"
-  environment = "production"
+  environment = "env-expto"
+  num_azs     = 2
+
   vpc_cidr = {
-    range = "172.20.0.0/20"
-  }
-
-  num_azs = 2
-
-  create_database_subnet_group = true
-  type_database_subnet_group = {
-    private = true
-    public  = true
+    range = "10.10.0.0/20"
   }
 
   subnet_mask = {
-    private = 4
     public  = 4
+    private = 4
   }
 
   subnet_mask_init = {
-    public = 2
+    public  = 0
+    private = 2
+  }
+
+  create_database_subnet_group = {
+    public  = true
+    private = true
   }
 
 }

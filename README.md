@@ -2,7 +2,7 @@
 <h1 align="center">Hi 👋, I'm Paulo César Nunes from Brazil🇧🇷</h1>
 
 <h3 align="center">DevOps Engineer focused on automation and cloud technologies for efficiency.</h3>
-<img align="center" alt="Scripting" width="400" src="https://cdn.dribbble.com/userupload/7725640/file/original-a2b82ab8779ece4c49df3672f7753ccb.gif">
+<h3 <img align="center" alt="Scripting" width="400" src="https://cdn.dribbble.com/userupload/7725640/file/original-a2b82ab8779ece4c49df3672f7753ccb.gif"></h3>
 
 <br />
 

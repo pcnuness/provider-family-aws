@@ -8,12 +8,9 @@
 
 <h2 align="center">Setup Network in AWS using Terraform (Amazon VPC)</h2>
 
-Codigos utilizados [Repositorio](https://gitlab.com/pcnuness/iac/terraform/provider-family-aws/provider-aws-vpc)
-
 <br />
 
-<h3 align="left">subnet-public-private</h3>
-<p align="left">
+#### ➤ [subnet-public-private](https://gitlab.com/pcnuness/iac/terraform/provider-family-aws/provider-aws-vpc)
 
 ```bash
 module "vpc" {

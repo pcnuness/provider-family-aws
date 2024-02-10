@@ -14,12 +14,12 @@
 
 ```bash
 module "vpc" {
-  source = "../../modules/subnet-public-private"
+  source = "../modules/subnet-public-private-publish"
 
-  client_name = "xpto"
+  client_name = "pcnunes"
   region      = "us-east-1"
-  environment = "env-expto"
-  num_azs     = 2
+  environment = "labs"
+  num_azs     = 3
 
   vpc_cidr = {
     range = "10.10.0.0/20"
@@ -28,15 +28,53 @@ module "vpc" {
   subnet_mask = {
     public  = 4
     private = 4
+    publish = 4
   }
 
   subnet_mask_init = {
     public  = 0
-    private = 2
+    private = 3
+    publish = 6
   }
 
   create_database_subnet_group = {
-    public  = true
+    public  = false
+    private = true
+  }
+
+}
+```
+<br />
+
+#### ➤ [subnet-public-private-publish](https://gitlab.com/pcnuness/iac/terraform/provider-family-aws/provider-aws-vpc)
+
+```bash
+module "vpc" {
+  source = "../modules/subnet-public-private-publish"
+
+  client_name = "pcnunes"
+  region      = "us-east-1"
+  environment = "labs"
+  num_azs     = 3
+
+  vpc_cidr = {
+    range = "10.10.0.0/20"
+  }
+
+  subnet_mask = {
+    public  = 4
+    private = 4
+    publish = 4
+  }
+
+  subnet_mask_init = {
+    public  = 0
+    private = 3
+    publish = 6
+  }
+
+  create_database_subnet_group = {
+    public  = false
     private = true
   }
 
